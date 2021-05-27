@@ -62,9 +62,9 @@ function get_release_candidate() {
 
 # Extract the release name from the git branch name
 function get_release_name() {
-  # Match branch name release-X.X.X-rcY and return X.X.X
-  # or match tag name X.X.X and return X.X.X
-  git_get_branch 2>/dev/null | grep -Po "(?<=release-)([0-9]|\.)*(?=rc)" || git_get_tag | grep -Po "^([0-9]|\.)*$" || true
+  # Match branch name release-X.X.X[-pre.XXXXXXXX.X]rcY and return X.X.X[-pre.XXXXXXXX.X]
+  # or match tag name X.X.X[-pre.XXXXXXXX.X] and return X.X.X[-pre.XXXXXXXX.X]
+   git_get_branch 2>/dev/null | grep -Po "(?<=release-)([0-9]|\.)*(-pre\.[0-9]{8}(\.[0-9]+){1,2})?(?=rc)" || git_get_tag | grep -Po "^([0-9]|\.)*(-pre\.[0-9]{8}(\.[0-9]+){1,2})?$" || true
 }
 
 # Get the list of commit hashes between two revisions
