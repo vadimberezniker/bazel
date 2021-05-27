@@ -78,13 +78,13 @@ public final class BlazeOptionHandler {
   private final InvocationPolicy invocationPolicy;
   private final List<String> rcfileNotes = new ArrayList<>();
 
-  BlazeOptionHandler(
-      BlazeRuntime runtime,
-      BlazeWorkspace workspace,
-      BlazeCommand command,
-      Command commandAnnotation,
-      OptionsParser optionsParser,
-      InvocationPolicy invocationPolicy) {
+  public BlazeOptionHandler(
+          BlazeRuntime runtime,
+          BlazeWorkspace workspace,
+          BlazeCommand command,
+          Command commandAnnotation,
+          OptionsParser optionsParser,
+          InvocationPolicy invocationPolicy) {
     this.runtime = runtime;
     this.workspace = workspace;
     this.command = command;
@@ -97,7 +97,7 @@ public final class BlazeOptionHandler {
    * Return options as {@link OptionsParsingResult} so the options can't be easily modified after
    * we've applied the invocation policy.
    */
-  OptionsParsingResult getOptionsResult() {
+  public OptionsParsingResult getOptionsResult() {
     return optionsParser;
   }
 
@@ -286,7 +286,7 @@ public final class BlazeOptionHandler {
    *
    * @return {@code DetailedExitCode.success()} if everything went well, or some other value if not
    */
-  DetailedExitCode parseOptions(List<String> args, ExtendedEventHandler eventHandler) {
+  public DetailedExitCode parseOptions(List<String> args, ExtendedEventHandler eventHandler) {
     // The initialization code here was carefully written to parse the options early before we call
     // into the BlazeModule APIs, which means we must not generate any output to outErr, return, or
     // throw an exception. All the events happening here are instead stored in a temporary event

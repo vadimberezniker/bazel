@@ -1117,8 +1117,8 @@ public final class BlazeRuntime implements BugReport.BlazeRuntimeInterface {
    *     an error string that, if not null, describes a fatal initialization failure that makes this
    *     runtime unsuitable for real commands
    */
-  private static BlazeRuntime newRuntime(
-      Iterable<BlazeModule> blazeModules, List<String> args, Runnable abruptShutdownHandler)
+  public static BlazeRuntime newRuntime(
+          Iterable<BlazeModule> blazeModules, List<String> args, Runnable abruptShutdownHandler)
       throws AbruptExitException, OptionsParsingException {
     OptionsParsingResult options = parseStartupOptions(blazeModules, args);
     BlazeServerStartupOptions startupOptions = options.getOptions(BlazeServerStartupOptions.class);

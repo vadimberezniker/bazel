@@ -70,7 +70,7 @@ import javax.annotation.concurrent.GuardedBy;
  *
  * <p>See {@link ReferenceCounted} for more information on reference counting.
  */
-class ByteStreamUploader extends AbstractReferenceCounted {
+public class ByteStreamUploader extends AbstractReferenceCounted {
 
   private static final GoogleLogger logger = GoogleLogger.forEnclosingClass();
 
@@ -502,6 +502,8 @@ class ByteStreamUploader extends AbstractReferenceCounted {
     }
 
     private ListenableFuture<Void> call(AtomicLong committedOffset) {
+      System.out.println("Starting RPC, file offset " + committedOffset);
+
       CallOptions callOptions =
           CallOptions.DEFAULT
               .withCallCredentials(callCredentialsProvider.getCallCredentials())
