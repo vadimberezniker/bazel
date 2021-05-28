@@ -11,7 +11,7 @@ public class DownloadFile {
 
         BazelEnv env = new BazelEnv(Arrays.asList(args).subList(1, args.length));
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 1; i++) {
             System.out.println("Downloading file, loop " + i);
             env.downloadFile(args[0]);
         }
