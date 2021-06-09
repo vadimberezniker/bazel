@@ -36,7 +36,7 @@ distrib_jar_filegroup(
         "grpc-auth-1.33.1.jar",
         "grpc-context-1.33.1.jar",
         "grpc-core-1.33.1.jar",
-        "grpc-netty-1.33.1.jar",
+        "grpc-netty-1.33.1-vadim.jar",
         "grpc-protobuf-1.33.1.jar",
         "grpc-protobuf-lite-1.33.1.jar",
         "grpc-stub-1.33.1.jar",
