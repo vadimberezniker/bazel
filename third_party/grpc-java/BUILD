@@ -51,6 +51,10 @@ GRPC_JARS = [
     "@maven//:io_grpc_grpc_protobuf",
     "@maven//:io_grpc_grpc_protobuf_lite",
     "@maven//:io_grpc_grpc_stub",
+    "@maven//:io_opentelemetry_instrumentation_opentelemetry_grpc_1_6",
+    "@maven//:io_opentelemetry_opentelemetry_sdk_extension_autoconfigure",
+    "@maven//:io_opentelemetry_opentelemetry_api",
+    "@maven//:io_opentelemetry_opentelemetry_exporter_otlp",
 ]
 
 # TODO: wyv@ - rename this to just `grpc-java`.

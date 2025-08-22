@@ -20,6 +20,7 @@ import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
+import com.google.common.flogger.GoogleLogger;
 import com.google.devtools.build.lib.authandtls.credentialhelper.CredentialHelperCredentials;
 import com.google.devtools.build.lib.authandtls.credentialhelper.CredentialHelperEnvironment;
 import com.google.devtools.build.lib.authandtls.credentialhelper.CredentialHelperProvider;
@@ -28,9 +29,7 @@ import com.google.devtools.build.lib.events.Event;
 import com.google.devtools.build.lib.runtime.CommandLinePathFactory;
 import com.google.devtools.build.lib.vfs.FileSystem;
 import com.google.devtools.build.lib.vfs.Path;
-import io.grpc.CallCredentials;
-import io.grpc.ClientInterceptor;
-import io.grpc.ManagedChannel;
+import io.grpc.*;
 import io.grpc.auth.MoreCallCredentials;
 import io.grpc.netty.GrpcSslContexts;
 import io.grpc.netty.NegotiationType;
@@ -45,6 +44,11 @@ import io.netty.channel.kqueue.KQueueEventLoopGroup;
 import io.netty.channel.unix.DomainSocketAddress;
 import io.netty.handler.ssl.SslContext;
 import io.netty.handler.ssl.SslContextBuilder;
+import io.opentelemetry.api.GlobalOpenTelemetry;
+import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.instrumentation.grpc.v1_6.GrpcTelemetry;
+import io.opentelemetry.sdk.autoconfigure.AutoConfiguredOpenTelemetrySdk;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -60,6 +64,20 @@ import javax.annotation.Nullable;
 
 /** Utility methods for using {@link AuthAndTLSOptions} with Google Cloud. */
 public final class GoogleAuthUtils {
+
+  private static final GoogleLogger logger = GoogleLogger.forEnclosingClass();
+
+  private static boolean tracingInitialized;
+
+  private static synchronized OpenTelemetry initTracing() {
+    if (!tracingInitialized) {
+      AutoConfiguredOpenTelemetrySdk.initialize();
+      tracingInitialized = true;
+      logger.atInfo().log("VVVVV Initialized OpenTelemetry: %s", GlobalOpenTelemetry.get());
+    }
+
+    return GlobalOpenTelemetry.get();
+  }
 
   /**
    * Create a new gRPC {@link ManagedChannel}.
@@ -96,6 +114,17 @@ public final class GoogleAuthUtils {
       if (interceptors != null) {
         builder.intercept(interceptors);
       }
+
+      OpenTelemetry openTelemetry = initTracing();
+      GrpcTelemetry grpcTelemetry = GrpcTelemetry.create(openTelemetry);
+      builder.intercept(grpcTelemetry.newClientInterceptor());
+      builder.intercept(new ClientInterceptor() {
+        @Override
+        public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(MethodDescriptor<ReqT, RespT> method, CallOptions callOptions, Channel next) {
+          logger.atInfo().log("RPC CALL %s", method.getFullMethodName());
+         return next.newCall(method, callOptions);
+        }
+      });
       if (sslContext != null) {
         builder.sslContext(sslContext);
         if (options.tlsAuthorityOverride != null) {

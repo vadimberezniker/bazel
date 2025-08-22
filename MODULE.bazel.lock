@@ -1454,9 +1454,9 @@
     "@@rules_jvm_external+//:extensions.bzl%maven": {
       "general": {
         "bzlTransitiveDigest": "eFWAf0xs060wNpmZkersPexZt4+6p4VdZCCQb2swjng=",
-        "usagesDigest": "NdirrjiQ3MzhENnTLNJOZ1p+807IhMSTnnI5w6jz6Iw=",
+        "usagesDigest": "Wu+BtXpu2N0vpnHtqTtYfKnPEiAqQcqjXVBYPBZHaEU=",
         "recordedFileInputs": {
-          "@@//maven_install.json": "73f376b5837fa1bdf89ba1d0ee1d7c4817689be379ce454c3bfb31840ea1f7a7",
+          "@@//maven_install.json": "e5f95cb285a193c98e97d99c4954ef5e587fc65cb5e81698ea968b9e821391b9",
           "@@rules_jvm_external+//rules_jvm_external_deps_install.json": "cafb5d2d8119391eb2b322ce3840d3352ea82d496bdb8cbd4b6779ec4d044dda",
           "@@stardoc+//maven_install.json": "25f3c138ca52c61e0e7a564fe21f5709261b33d78d35427b6c18d7aa202d973b"
         },
@@ -1555,6 +1555,11 @@
                 "{ \"group\": \"io.netty\", \"artifact\": \"netty-transport-native-unix-common\", \"version\": \"4.1.119.Final\", \"packaging\": \"jar\", \"classifier\": \"linux-x86_64\" }",
                 "{ \"group\": \"io.netty\", \"artifact\": \"netty-transport-native-unix-common\", \"version\": \"4.1.119.Final\", \"packaging\": \"jar\", \"classifier\": \"osx-aarch_64\" }",
                 "{ \"group\": \"io.netty\", \"artifact\": \"netty-transport-native-unix-common\", \"version\": \"4.1.119.Final\", \"packaging\": \"jar\", \"classifier\": \"osx-x86_64\" }",
+                "{ \"group\": \"io.opentelemetry.instrumentation\", \"artifact\": \"opentelemetry-grpc-1.6\", \"version\": \"2.19.0-alpha\" }",
+                "{ \"group\": \"io.opentelemetry\", \"artifact\": \"opentelemetry-sdk-extension-autoconfigure\", \"version\": \"1.53.0\" }",
+                "{ \"group\": \"io.opentelemetry\", \"artifact\": \"opentelemetry-sdk\", \"version\": \"1.53.0\" }",
+                "{ \"group\": \"io.opentelemetry\", \"artifact\": \"opentelemetry-api\", \"version\": \"1.53.0\" }",
+                "{ \"group\": \"io.opentelemetry\", \"artifact\": \"opentelemetry-exporter-otlp\", \"version\": \"1.53.0\" }",
                 "{ \"group\": \"io.reactivex.rxjava3\", \"artifact\": \"rxjava\", \"version\": \"3.1.2\" }",
                 "{ \"group\": \"it.unimi.dsi\", \"artifact\": \"fastutil\", \"version\": \"7.2.1\" }",
                 "{ \"group\": \"javax.activation\", \"artifact\": \"javax.activation-api\", \"version\": \"1.2.0\" }",
@@ -2356,6 +2361,17 @@
               "downloaded_file_path": "v1/com/ryanharter/auto/value/auto-value-gson-runtime/1.3.1/auto-value-gson-runtime-1.3.1.jar"
             }
           },
+          "com_squareup_okhttp3_okhttp_jvm_5_1_0": {
+            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
+            "attributes": {
+              "sha256": "a6aac7f15d3c2c3cbd2af7ecf56f97407164a604b2db879529950e31cea699b2",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/squareup/okhttp3/okhttp-jvm/5.1.0/okhttp-jvm-5.1.0.jar",
+                "https://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp-jvm/5.1.0/okhttp-jvm-5.1.0.jar"
+              ],
+              "downloaded_file_path": "v1/com/squareup/okhttp3/okhttp-jvm/5.1.0/okhttp-jvm-5.1.0.jar"
+            }
+          },
           "com_squareup_okhttp_okhttp_2_7_5": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
             "attributes": {
@@ -2376,6 +2392,17 @@
                 "https://repo.maven.apache.org/maven2/com/squareup/okio/okio/2.10.0/okio-2.10.0.jar"
               ],
               "downloaded_file_path": "v1/com/squareup/okio/okio/2.10.0/okio-2.10.0.jar"
+            }
+          },
+          "com_squareup_okio_okio_jvm_3_15_0": {
+            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
+            "attributes": {
+              "sha256": "483dc383b1049d220892322a0d6a4308425f09bb05b48c43d4eaa9ff82b1cd16",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/squareup/okio/okio-jvm/3.15.0/okio-jvm-3.15.0.jar",
+                "https://repo.maven.apache.org/maven2/com/squareup/okio/okio-jvm/3.15.0/okio-jvm-3.15.0.jar"
+              ],
+              "downloaded_file_path": "v1/com/squareup/okio/okio-jvm/3.15.0/okio-jvm-3.15.0.jar"
             }
           },
           "com_squareup_javapoet_1_12_0": {
@@ -2961,6 +2988,215 @@
               "downloaded_file_path": "v1/io/opencensus/opencensus-contrib-http-util/0.31.1/opencensus-contrib-http-util-0.31.1.jar"
             }
           },
+          "io_opentelemetry_instrumentation_opentelemetry_grpc_1_6_2_19_0_alpha": {
+            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
+            "attributes": {
+              "sha256": "e57be609708267cc48e0028861b20d56d9145c9e3296349fd8343dd5ea5c929a",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/opentelemetry/instrumentation/opentelemetry-grpc-1.6/2.19.0-alpha/opentelemetry-grpc-1.6-2.19.0-alpha.jar",
+                "https://repo.maven.apache.org/maven2/io/opentelemetry/instrumentation/opentelemetry-grpc-1.6/2.19.0-alpha/opentelemetry-grpc-1.6-2.19.0-alpha.jar"
+              ],
+              "downloaded_file_path": "v1/io/opentelemetry/instrumentation/opentelemetry-grpc-1.6/2.19.0-alpha/opentelemetry-grpc-1.6-2.19.0-alpha.jar"
+            }
+          },
+          "io_opentelemetry_instrumentation_opentelemetry_instrumentation_api_2_19_0": {
+            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
+            "attributes": {
+              "sha256": "5f4e5c81328645dfe2eff704f85bf734228ec44b19cbf54f56633f0a4a3ea5c5",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/opentelemetry/instrumentation/opentelemetry-instrumentation-api/2.19.0/opentelemetry-instrumentation-api-2.19.0.jar",
+                "https://repo.maven.apache.org/maven2/io/opentelemetry/instrumentation/opentelemetry-instrumentation-api/2.19.0/opentelemetry-instrumentation-api-2.19.0.jar"
+              ],
+              "downloaded_file_path": "v1/io/opentelemetry/instrumentation/opentelemetry-instrumentation-api/2.19.0/opentelemetry-instrumentation-api-2.19.0.jar"
+            }
+          },
+          "io_opentelemetry_instrumentation_opentelemetry_instrumentation_api_incubator_2_19_0_alpha": {
+            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
+            "attributes": {
+              "sha256": "89b4edd0a1f0b08727480e4f9c8f6e790785c827a3620c4bb43ae525ba235b51",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/opentelemetry/instrumentation/opentelemetry-instrumentation-api-incubator/2.19.0-alpha/opentelemetry-instrumentation-api-incubator-2.19.0-alpha.jar",
+                "https://repo.maven.apache.org/maven2/io/opentelemetry/instrumentation/opentelemetry-instrumentation-api-incubator/2.19.0-alpha/opentelemetry-instrumentation-api-incubator-2.19.0-alpha.jar"
+              ],
+              "downloaded_file_path": "v1/io/opentelemetry/instrumentation/opentelemetry-instrumentation-api-incubator/2.19.0-alpha/opentelemetry-instrumentation-api-incubator-2.19.0-alpha.jar"
+            }
+          },
+          "io_opentelemetry_semconv_opentelemetry_semconv_1_34_0": {
+            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
+            "attributes": {
+              "sha256": "16b316ce2f38f7838e2d656274e48860c6d4747cf571ad7811dd302f2cd97681",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/opentelemetry/semconv/opentelemetry-semconv/1.34.0/opentelemetry-semconv-1.34.0.jar",
+                "https://repo.maven.apache.org/maven2/io/opentelemetry/semconv/opentelemetry-semconv/1.34.0/opentelemetry-semconv-1.34.0.jar"
+              ],
+              "downloaded_file_path": "v1/io/opentelemetry/semconv/opentelemetry-semconv/1.34.0/opentelemetry-semconv-1.34.0.jar"
+            }
+          },
+          "io_opentelemetry_opentelemetry_api_1_53_0": {
+            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
+            "attributes": {
+              "sha256": "1991903b9fc76b27f1e6a70a5a97131668fb5f3ac9026178c450d510cbb1bef2",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/opentelemetry/opentelemetry-api/1.53.0/opentelemetry-api-1.53.0.jar",
+                "https://repo.maven.apache.org/maven2/io/opentelemetry/opentelemetry-api/1.53.0/opentelemetry-api-1.53.0.jar"
+              ],
+              "downloaded_file_path": "v1/io/opentelemetry/opentelemetry-api/1.53.0/opentelemetry-api-1.53.0.jar"
+            }
+          },
+          "io_opentelemetry_opentelemetry_api_incubator_1_53_0_alpha": {
+            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
+            "attributes": {
+              "sha256": "3caab734059739296cb572ff4d00e86d4a1c9c46854b5e6695ef4b59d888d49a",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/opentelemetry/opentelemetry-api-incubator/1.53.0-alpha/opentelemetry-api-incubator-1.53.0-alpha.jar",
+                "https://repo.maven.apache.org/maven2/io/opentelemetry/opentelemetry-api-incubator/1.53.0-alpha/opentelemetry-api-incubator-1.53.0-alpha.jar"
+              ],
+              "downloaded_file_path": "v1/io/opentelemetry/opentelemetry-api-incubator/1.53.0-alpha/opentelemetry-api-incubator-1.53.0-alpha.jar"
+            }
+          },
+          "io_opentelemetry_opentelemetry_common_1_53_0": {
+            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
+            "attributes": {
+              "sha256": "73a5181dd07e72c4312fadafc8328ad1046a32c050030e3a7b8c16113daad359",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/opentelemetry/opentelemetry-common/1.53.0/opentelemetry-common-1.53.0.jar",
+                "https://repo.maven.apache.org/maven2/io/opentelemetry/opentelemetry-common/1.53.0/opentelemetry-common-1.53.0.jar"
+              ],
+              "downloaded_file_path": "v1/io/opentelemetry/opentelemetry-common/1.53.0/opentelemetry-common-1.53.0.jar"
+            }
+          },
+          "io_opentelemetry_opentelemetry_context_1_53_0": {
+            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
+            "attributes": {
+              "sha256": "88a780c5bb7b51e7c07071d61403e34f13277d092bf441a5cb49cf2ce9c756e9",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/opentelemetry/opentelemetry-context/1.53.0/opentelemetry-context-1.53.0.jar",
+                "https://repo.maven.apache.org/maven2/io/opentelemetry/opentelemetry-context/1.53.0/opentelemetry-context-1.53.0.jar"
+              ],
+              "downloaded_file_path": "v1/io/opentelemetry/opentelemetry-context/1.53.0/opentelemetry-context-1.53.0.jar"
+            }
+          },
+          "io_opentelemetry_opentelemetry_exporter_common_1_53_0": {
+            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
+            "attributes": {
+              "sha256": "d7f093f987547c9c2c2caa28baf1254507c59b4dbf97b49fee5c9cd1ceb6f8d5",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/opentelemetry/opentelemetry-exporter-common/1.53.0/opentelemetry-exporter-common-1.53.0.jar",
+                "https://repo.maven.apache.org/maven2/io/opentelemetry/opentelemetry-exporter-common/1.53.0/opentelemetry-exporter-common-1.53.0.jar"
+              ],
+              "downloaded_file_path": "v1/io/opentelemetry/opentelemetry-exporter-common/1.53.0/opentelemetry-exporter-common-1.53.0.jar"
+            }
+          },
+          "io_opentelemetry_opentelemetry_exporter_otlp_1_53_0": {
+            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
+            "attributes": {
+              "sha256": "0ce88bf35577894ee185f718f1b981938bbfc8981f3b7fcecbfd7b7c375bc236",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/opentelemetry/opentelemetry-exporter-otlp/1.53.0/opentelemetry-exporter-otlp-1.53.0.jar",
+                "https://repo.maven.apache.org/maven2/io/opentelemetry/opentelemetry-exporter-otlp/1.53.0/opentelemetry-exporter-otlp-1.53.0.jar"
+              ],
+              "downloaded_file_path": "v1/io/opentelemetry/opentelemetry-exporter-otlp/1.53.0/opentelemetry-exporter-otlp-1.53.0.jar"
+            }
+          },
+          "io_opentelemetry_opentelemetry_exporter_otlp_common_1_53_0": {
+            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
+            "attributes": {
+              "sha256": "32bcf0e855110b09cffbb5aac59c69d2caaa35de646e07c0a5f7f50ab42d4c1f",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/opentelemetry/opentelemetry-exporter-otlp-common/1.53.0/opentelemetry-exporter-otlp-common-1.53.0.jar",
+                "https://repo.maven.apache.org/maven2/io/opentelemetry/opentelemetry-exporter-otlp-common/1.53.0/opentelemetry-exporter-otlp-common-1.53.0.jar"
+              ],
+              "downloaded_file_path": "v1/io/opentelemetry/opentelemetry-exporter-otlp-common/1.53.0/opentelemetry-exporter-otlp-common-1.53.0.jar"
+            }
+          },
+          "io_opentelemetry_opentelemetry_exporter_sender_okhttp_1_53_0": {
+            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
+            "attributes": {
+              "sha256": "80ea7df983862e94167b159d2047721feb7af1d7bebe2d7153b5cf062e7605e0",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/opentelemetry/opentelemetry-exporter-sender-okhttp/1.53.0/opentelemetry-exporter-sender-okhttp-1.53.0.jar",
+                "https://repo.maven.apache.org/maven2/io/opentelemetry/opentelemetry-exporter-sender-okhttp/1.53.0/opentelemetry-exporter-sender-okhttp-1.53.0.jar"
+              ],
+              "downloaded_file_path": "v1/io/opentelemetry/opentelemetry-exporter-sender-okhttp/1.53.0/opentelemetry-exporter-sender-okhttp-1.53.0.jar"
+            }
+          },
+          "io_opentelemetry_opentelemetry_sdk_1_53_0": {
+            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
+            "attributes": {
+              "sha256": "d58721063bca5d612bf1f6dccb883664210999c5aa470c149d1509672f13229c",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/opentelemetry/opentelemetry-sdk/1.53.0/opentelemetry-sdk-1.53.0.jar",
+                "https://repo.maven.apache.org/maven2/io/opentelemetry/opentelemetry-sdk/1.53.0/opentelemetry-sdk-1.53.0.jar"
+              ],
+              "downloaded_file_path": "v1/io/opentelemetry/opentelemetry-sdk/1.53.0/opentelemetry-sdk-1.53.0.jar"
+            }
+          },
+          "io_opentelemetry_opentelemetry_sdk_common_1_53_0": {
+            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
+            "attributes": {
+              "sha256": "a5d68aca0920aa0dc17b9ecc5510abe4c344e66eae9a4420c992298e4712d3bc",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/opentelemetry/opentelemetry-sdk-common/1.53.0/opentelemetry-sdk-common-1.53.0.jar",
+                "https://repo.maven.apache.org/maven2/io/opentelemetry/opentelemetry-sdk-common/1.53.0/opentelemetry-sdk-common-1.53.0.jar"
+              ],
+              "downloaded_file_path": "v1/io/opentelemetry/opentelemetry-sdk-common/1.53.0/opentelemetry-sdk-common-1.53.0.jar"
+            }
+          },
+          "io_opentelemetry_opentelemetry_sdk_extension_autoconfigure_1_53_0": {
+            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
+            "attributes": {
+              "sha256": "72becaccfb3d79d91c6486bf4e68f2474a1aa7742934fb675ea077e35a8dc3e1",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.53.0/opentelemetry-sdk-extension-autoconfigure-1.53.0.jar",
+                "https://repo.maven.apache.org/maven2/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.53.0/opentelemetry-sdk-extension-autoconfigure-1.53.0.jar"
+              ],
+              "downloaded_file_path": "v1/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.53.0/opentelemetry-sdk-extension-autoconfigure-1.53.0.jar"
+            }
+          },
+          "io_opentelemetry_opentelemetry_sdk_extension_autoconfigure_spi_1_53_0": {
+            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
+            "attributes": {
+              "sha256": "e814e63dc2f8cbdf84574b6289eb543b89b06486d03cad1e697b06d802ce27bb",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.53.0/opentelemetry-sdk-extension-autoconfigure-spi-1.53.0.jar",
+                "https://repo.maven.apache.org/maven2/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.53.0/opentelemetry-sdk-extension-autoconfigure-spi-1.53.0.jar"
+              ],
+              "downloaded_file_path": "v1/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.53.0/opentelemetry-sdk-extension-autoconfigure-spi-1.53.0.jar"
+            }
+          },
+          "io_opentelemetry_opentelemetry_sdk_logs_1_53_0": {
+            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
+            "attributes": {
+              "sha256": "ae1c30170bfe71cb91e2fc0d193c8899aaba5acc90c80a219a4080c2817b9bf8",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/opentelemetry/opentelemetry-sdk-logs/1.53.0/opentelemetry-sdk-logs-1.53.0.jar",
+                "https://repo.maven.apache.org/maven2/io/opentelemetry/opentelemetry-sdk-logs/1.53.0/opentelemetry-sdk-logs-1.53.0.jar"
+              ],
+              "downloaded_file_path": "v1/io/opentelemetry/opentelemetry-sdk-logs/1.53.0/opentelemetry-sdk-logs-1.53.0.jar"
+            }
+          },
+          "io_opentelemetry_opentelemetry_sdk_metrics_1_53_0": {
+            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
+            "attributes": {
+              "sha256": "3d7dbae6c03be035e7c4dbdd50442741b260be5463fa9aadca1b00af0efddee5",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/opentelemetry/opentelemetry-sdk-metrics/1.53.0/opentelemetry-sdk-metrics-1.53.0.jar",
+                "https://repo.maven.apache.org/maven2/io/opentelemetry/opentelemetry-sdk-metrics/1.53.0/opentelemetry-sdk-metrics-1.53.0.jar"
+              ],
+              "downloaded_file_path": "v1/io/opentelemetry/opentelemetry-sdk-metrics/1.53.0/opentelemetry-sdk-metrics-1.53.0.jar"
+            }
+          },
+          "io_opentelemetry_opentelemetry_sdk_trace_1_53_0": {
+            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
+            "attributes": {
+              "sha256": "6d26512cbf7434c03a25f3828886f8866f43c683339ba98eaccce74471fcb40a",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/opentelemetry/opentelemetry-sdk-trace/1.53.0/opentelemetry-sdk-trace-1.53.0.jar",
+                "https://repo.maven.apache.org/maven2/io/opentelemetry/opentelemetry-sdk-trace/1.53.0/opentelemetry-sdk-trace-1.53.0.jar"
+              ],
+              "downloaded_file_path": "v1/io/opentelemetry/opentelemetry-sdk-trace/1.53.0/opentelemetry-sdk-trace-1.53.0.jar"
+            }
+          },
           "io_perfmark_perfmark_api_0_27_0": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
             "attributes": {
@@ -3258,15 +3494,15 @@
               "downloaded_file_path": "v1/org/jetbrains/kotlin/kotlin-metadata-jvm/2.0.0/kotlin-metadata-jvm-2.0.0.jar"
             }
           },
-          "org_jetbrains_kotlin_kotlin_stdlib_2_0_0": {
+          "org_jetbrains_kotlin_kotlin_stdlib_2_2_0": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
             "attributes": {
-              "sha256": "240938c4aab8e73e888703e3e7d3f87383ffe5bd536d6d5e3c100d4cd0379fcf",
+              "sha256": "65d12d85a3b865c160db9147851712a64b10dadd68b22eea22a95bf8a8670dca",
               "urls": [
-                "https://repo1.maven.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/2.0.0/kotlin-stdlib-2.0.0.jar",
-                "https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/2.0.0/kotlin-stdlib-2.0.0.jar"
+                "https://repo1.maven.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/2.2.0/kotlin-stdlib-2.2.0.jar",
+                "https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/2.2.0/kotlin-stdlib-2.2.0.jar"
               ],
-              "downloaded_file_path": "v1/org/jetbrains/kotlin/kotlin-stdlib/2.0.0/kotlin-stdlib-2.0.0.jar"
+              "downloaded_file_path": "v1/org/jetbrains/kotlin/kotlin-stdlib/2.2.0/kotlin-stdlib-2.2.0.jar"
             }
           },
           "org_jetbrains_kotlin_kotlin_stdlib_common_1_4_20": {
@@ -3669,6 +3905,11 @@
                 "{ \"group\": \"io.netty\", \"artifact\": \"netty-transport-native-unix-common\", \"version\": \"4.1.119.Final\", \"packaging\": \"jar\", \"classifier\": \"linux-x86_64\" }",
                 "{ \"group\": \"io.netty\", \"artifact\": \"netty-transport-native-unix-common\", \"version\": \"4.1.119.Final\", \"packaging\": \"jar\", \"classifier\": \"osx-aarch_64\" }",
                 "{ \"group\": \"io.netty\", \"artifact\": \"netty-transport-native-unix-common\", \"version\": \"4.1.119.Final\", \"packaging\": \"jar\", \"classifier\": \"osx-x86_64\" }",
+                "{ \"group\": \"io.opentelemetry.instrumentation\", \"artifact\": \"opentelemetry-grpc-1.6\", \"version\": \"2.19.0-alpha\" }",
+                "{ \"group\": \"io.opentelemetry\", \"artifact\": \"opentelemetry-sdk-extension-autoconfigure\", \"version\": \"1.53.0\" }",
+                "{ \"group\": \"io.opentelemetry\", \"artifact\": \"opentelemetry-sdk\", \"version\": \"1.53.0\" }",
+                "{ \"group\": \"io.opentelemetry\", \"artifact\": \"opentelemetry-api\", \"version\": \"1.53.0\" }",
+                "{ \"group\": \"io.opentelemetry\", \"artifact\": \"opentelemetry-exporter-otlp\", \"version\": \"1.53.0\" }",
                 "{ \"group\": \"io.reactivex.rxjava3\", \"artifact\": \"rxjava\", \"version\": \"3.1.2\" }",
                 "{ \"group\": \"it.unimi.dsi\", \"artifact\": \"fastutil\", \"version\": \"7.2.1\" }",
                 "{ \"group\": \"javax.activation\", \"artifact\": \"javax.activation-api\", \"version\": \"1.2.0\" }",
